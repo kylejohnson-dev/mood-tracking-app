@@ -89,7 +89,8 @@
   }
   .text-preset-5 {
     font-size: 20px;
-    font-weight: semibold;
+    @apply font-semibold;
+    /* font-weight: semibold; */
     line-height: 140%;
     letter-spacing: 0px;
   }
