@@ -1,3 +1,4 @@
+import { Chart } from "@/components/chart";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -48,9 +49,9 @@ export default function Home() {
                   <Image 
                     src="/icon-sleep.svg"
                     alt="sleep"
-                    width={19}
-                    height={22}
-                    className="fill-neutral-600"
+                    width={16}
+                    height={16}
+                    className="fill-neutral-600 w-[22px] h-[22px]"
                   />
                   <span className="text-preset-6 text-neutral-600">Sleep</span>
                 </span>
@@ -85,7 +86,15 @@ export default function Home() {
                   Average Mood
                   <span className="text-preset-7 text-neutral-600">(Last 5 Check-ins)</span>
                 </p>
-                <div className="h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                  <Image 
+                      src="/bg-pattern-averages.svg"
+                      alt="pattern"
+                      width={243}
+                      height={251}
+                      className="z-10 absolute -top-[37px] -right-[156px]"
+                      aria-hidden="true"
+                    />
                   <p className="text-preset-4 text-neutral-900">Keep tracking!</p>
                   <span className="text-preset-7 text-neutral-900">Log 5 check-ins to see your average mood.</span>
                 </div>
@@ -95,14 +104,25 @@ export default function Home() {
                   Average Sleep
                   <span className="text-preset-7 text-neutral-600">(Last 5 Check-ins)</span>
                 </p>
-                <div className="h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                    <Image 
+                      src="/bg-pattern-averages.svg"
+                      alt="pattern"
+                      width={243}
+                      height={251}
+                      className="z-10 absolute -top-[37px] -right-[156px]"
+                      aria-hidden="true"
+                    />
                   <p className="text-preset-4 text-neutral-900">Not enough data yet!</p>
                   <span className="text-preset-7 text-neutral-900">Track 5 nights to view average sleep.</span>
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-8 bg-white rounded-2xl">
-
+            <div className="lg:col-span-8 bg-white rounded-2xl space-y-8 p-8">
+              <p className="text-preset-3 text-neutral-900">Mood and sleep trends</p>
+              <div>
+                <Chart />
+              </div>
             </div>
           </section>
         </div>

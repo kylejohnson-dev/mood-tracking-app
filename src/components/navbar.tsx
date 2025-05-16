@@ -92,7 +92,7 @@ function Navbar() {
                 <Avatar>
                   <AvatarImage src="/avatar-placeholder.svg" alt="avatar" />
                 </Avatar>
-                <Button variant="outline">Upload</Button>
+                <Input id="avatar" type="file" />
               </div>
             </div>
           </div>
