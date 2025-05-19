@@ -1,6 +1,10 @@
 import { Chart } from "@/components/chart";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Image from "next/image";
 
 export default function Home() {
@@ -15,7 +19,90 @@ export default function Home() {
             <p className="text-preset-1 text-neutral-900">How are you feelin today?</p>
             <p className="text-preset-6 text-neutral-600">Wednesday, April 16th, 2025</p>
           </div>
-          <Button className="h-[60px] bg-blue-600 text-preset-5 text-white px-8 py-4 mb-12 lg:mb-16">Log today&#39;s mood</Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="h-[60px] bg-blue-600 text-preset-5 text-white px-8 py-4 mb-12 lg:mb-16">Log today&#39;s mood</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-lg">
+              <DialogTitle className="sr-only">Log your mood.</DialogTitle>
+              <DialogDescription className="sr-only">How was your mood today?</DialogDescription>
+              <h2 className="text-preset-2-mobile text-neutral-900">Log your mood.</h2>
+              <Progress value={25} />
+              <p className="text-preset-3-mobile text-neutral-900">How was your mood today?</p>
+              <div>
+                <RadioGroup>
+                  <div className="">
+                    <Label htmlFor="very-happy" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
+                      <RadioGroupItem value="very-happy" id="very-happy" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
+                      <span className="text-preset-5 text-neutral-900">Very Happy</span>
+                      <Image 
+                        src="/icon-very-happy-color.svg"
+                        alt="happy"
+                        width={38}
+                        height={38}
+                        className="ml-auto"
+                      />
+                    </Label>
+                  </div>
+                  <div className="">
+                    <Label htmlFor="happy" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
+                      <RadioGroupItem value="happy" id="happy" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
+                      <span className="text-preset-5 text-neutral-900">Happy</span>
+                      <Image 
+                        src="/icon-happy-color.svg"
+                        alt="happy"
+                        width={38}
+                        height={38}
+                        className="ml-auto"
+                      />
+                    </Label>
+                  </div>
+                  <div className="">
+                    <Label htmlFor="neutral" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
+                      <RadioGroupItem value="neutral" id="neutral" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
+                      <span className="text-preset-5 text-neutral-900">Neutral</span>
+                      <Image 
+                        src="/icon-neutral-color.svg"
+                        alt="happy"
+                        width={38}
+                        height={38}
+                        className="ml-auto"
+                      />
+                    </Label>
+                  </div>
+                  <div className="">
+                    <Label htmlFor="sad" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
+                      <RadioGroupItem value="sad" id="sad" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
+                      <span className="text-preset-5 text-neutral-900">Sad</span>
+                      <Image 
+                        src="/icon-sad-color.svg"
+                        alt="happy"
+                        width={38}
+                        height={38}
+                        className="ml-auto"
+                      />
+                    </Label>
+                  </div>
+                  <div className="">
+                    <Label htmlFor="very-sad" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
+                      <RadioGroupItem value="very-sad" id="very-sad" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
+                      <span className="text-preset-5 text-neutral-900">Very Sad</span>
+                      <Image 
+                        src="/icon-very-sad-color.svg"
+                        alt="happy"
+                        width={38}
+                        height={38}
+                        className="ml-auto"
+                      />
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+              <Button className="h-14 bg-blue-600">
+                <span className="text-preset-5 text-white">Continue</span>
+              </Button>
+            </DialogContent>
+          </Dialog>
         </div>
         {/*  */}
         <div className="space-y-8">
@@ -86,7 +173,7 @@ export default function Home() {
                   Average Mood
                   <span className="text-preset-7 text-neutral-600">(Last 5 Check-ins)</span>
                 </p>
-                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl overflow-hidden space-y-3 px-4 py-5">
                   <Image 
                       src="/bg-pattern-averages.svg"
                       alt="pattern"
@@ -104,7 +191,7 @@ export default function Home() {
                   Average Sleep
                   <span className="text-preset-7 text-neutral-600">(Last 5 Check-ins)</span>
                 </p>
-                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl space-y-3 px-4 py-5">
+                <div className="relative h-[150px] place-content-center bg-blue-100 rounded-2xl overflow-hidden space-y-3 px-4 py-5">
                     <Image 
                       src="/bg-pattern-averages.svg"
                       alt="pattern"
