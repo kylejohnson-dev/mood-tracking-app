@@ -1,10 +1,10 @@
 import { Chart } from "@/components/chart";
+import { CustomRadioButton } from "@/components/custom-radio-button";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup } from "@/components/ui/radio-group";
 import Image from "next/image";
 
 export default function Home() {
@@ -32,69 +32,34 @@ export default function Home() {
               <div>
                 <RadioGroup>
                   <div className="">
-                    <Label htmlFor="very-happy" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
-                      <RadioGroupItem value="very-happy" id="very-happy" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
-                      <span className="text-preset-5 text-neutral-900">Very Happy</span>
-                      <Image 
-                        src="/icon-very-happy-color.svg"
-                        alt="happy"
-                        width={38}
-                        height={38}
-                        className="ml-auto"
-                      />
-                    </Label>
+                    <CustomRadioButton value="very-happy">
+                      <CustomRadioButton.Title>Very Happy</CustomRadioButton.Title>
+                      <CustomRadioButton.Icon src="/icon-very-happy-color.svg" />
+                    </CustomRadioButton>
                   </div>
                   <div className="">
-                    <Label htmlFor="happy" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
-                      <RadioGroupItem value="happy" id="happy" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
-                      <span className="text-preset-5 text-neutral-900">Happy</span>
-                      <Image 
-                        src="/icon-happy-color.svg"
-                        alt="happy"
-                        width={38}
-                        height={38}
-                        className="ml-auto"
-                      />
-                    </Label>
+                    <CustomRadioButton value="happy">
+                      <CustomRadioButton.Title>Happy</CustomRadioButton.Title>
+                      <CustomRadioButton.Icon src="/icon-happy-color.svg" />
+                    </CustomRadioButton>
                   </div>
                   <div className="">
-                    <Label htmlFor="neutral" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
-                      <RadioGroupItem value="neutral" id="neutral" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
-                      <span className="text-preset-5 text-neutral-900">Neutral</span>
-                      <Image 
-                        src="/icon-neutral-color.svg"
-                        alt="happy"
-                        width={38}
-                        height={38}
-                        className="ml-auto"
-                      />
-                    </Label>
+                    <CustomRadioButton value="neutral">
+                      <CustomRadioButton.Title>Neutral</CustomRadioButton.Title>
+                      <CustomRadioButton.Icon src="/icon-neutral-color.svg" />
+                    </CustomRadioButton>
                   </div>
                   <div className="">
-                    <Label htmlFor="sad" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
-                      <RadioGroupItem value="sad" id="sad" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
-                      <span className="text-preset-5 text-neutral-900">Sad</span>
-                      <Image 
-                        src="/icon-sad-color.svg"
-                        alt="happy"
-                        width={38}
-                        height={38}
-                        className="ml-auto"
-                      />
-                    </Label>
+                    <CustomRadioButton value="sad">
+                      <CustomRadioButton.Title>Sad</CustomRadioButton.Title>
+                      <CustomRadioButton.Icon src="/icon-sad-color.svg" />
+                    </CustomRadioButton>
                   </div>
                   <div className="">
-                    <Label htmlFor="very-sad" className="h-[62px] flex items-center bg-white rounded-xl border-2 border-blue-200 px-5 has-data-[state=checked]:border-blue-600">
-                      <RadioGroupItem value="very-sad" id="very-sad" className="w-5 h-5 border-2 border-blue-200 data-[state=checked]:border-4 data-[state=checked]:border-blue-600" />
-                      <span className="text-preset-5 text-neutral-900">Very Sad</span>
-                      <Image 
-                        src="/icon-very-sad-color.svg"
-                        alt="happy"
-                        width={38}
-                        height={38}
-                        className="ml-auto"
-                      />
-                    </Label>
+                    <CustomRadioButton value="very-sad">
+                      <CustomRadioButton.Title>Very Sad</CustomRadioButton.Title>
+                      <CustomRadioButton.Icon src="/icon-very-sad-color.svg" />
+                    </CustomRadioButton>
                   </div>
                 </RadioGroup>
               </div>
