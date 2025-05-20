@@ -1,10 +1,6 @@
 import { Chart } from "@/components/chart";
-import { CustomRadioButton } from "@/components/custom-radio-button";
+import { LogMood } from "@/components/log-mood";
 import { Navbar } from "@/components/navbar";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Progress } from "@/components/ui/progress";
-import { RadioGroup } from "@/components/ui/radio-group";
 import Image from "next/image";
 
 export default function Home() {
@@ -19,55 +15,7 @@ export default function Home() {
             <p className="text-preset-1 text-neutral-900">How are you feelin today?</p>
             <p className="text-preset-6 text-neutral-600">Wednesday, April 16th, 2025</p>
           </div>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="h-[60px] bg-blue-600 text-preset-5 text-white px-8 py-4 mb-12 lg:mb-16">Log today&#39;s mood</Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-lg">
-              <DialogTitle className="sr-only">Log your mood.</DialogTitle>
-              <DialogDescription className="sr-only">How was your mood today?</DialogDescription>
-              <h2 className="text-preset-2-mobile text-neutral-900">Log your mood.</h2>
-              <Progress value={25} />
-              <p className="text-preset-3-mobile text-neutral-900">How was your mood today?</p>
-              <div>
-                <RadioGroup>
-                  <div className="">
-                    <CustomRadioButton value="very-happy">
-                      <CustomRadioButton.Title>Very Happy</CustomRadioButton.Title>
-                      <CustomRadioButton.Icon src="/icon-very-happy-color.svg" />
-                    </CustomRadioButton>
-                  </div>
-                  <div className="">
-                    <CustomRadioButton value="happy">
-                      <CustomRadioButton.Title>Happy</CustomRadioButton.Title>
-                      <CustomRadioButton.Icon src="/icon-happy-color.svg" />
-                    </CustomRadioButton>
-                  </div>
-                  <div className="">
-                    <CustomRadioButton value="neutral">
-                      <CustomRadioButton.Title>Neutral</CustomRadioButton.Title>
-                      <CustomRadioButton.Icon src="/icon-neutral-color.svg" />
-                    </CustomRadioButton>
-                  </div>
-                  <div className="">
-                    <CustomRadioButton value="sad">
-                      <CustomRadioButton.Title>Sad</CustomRadioButton.Title>
-                      <CustomRadioButton.Icon src="/icon-sad-color.svg" />
-                    </CustomRadioButton>
-                  </div>
-                  <div className="">
-                    <CustomRadioButton value="very-sad">
-                      <CustomRadioButton.Title>Very Sad</CustomRadioButton.Title>
-                      <CustomRadioButton.Icon src="/icon-very-sad-color.svg" />
-                    </CustomRadioButton>
-                  </div>
-                </RadioGroup>
-              </div>
-              <Button className="h-14 bg-blue-600">
-                <span className="text-preset-5 text-white">Continue</span>
-              </Button>
-            </DialogContent>
-          </Dialog>
+          <LogMood />
         </div>
         {/*  */}
         <div className="space-y-8">
