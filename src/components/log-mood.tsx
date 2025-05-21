@@ -30,6 +30,11 @@ const steps = [
 // FIX: Add a submit button to the last step
 // FIX: Add a progress bar to show the current step
 // FIX: Switch content based on the current step
+// FIX: Save the mood to the database
+// FIX: Add a loading state when submitting the mood
+// FIX: Add a success message when the mood is submitted
+// FIX: Add a error message when the mood is not submitted
+// FIX: Save the mood to local storage
 
 export function LogMood() {
   const [step, setStep] = useState(0);

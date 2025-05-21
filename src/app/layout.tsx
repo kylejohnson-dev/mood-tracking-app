@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Reddit_Sans } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/lib/auth-context";
 
 const redditSans = Reddit_Sans({
   variable: "--font-reddit-sans",
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${redditSans.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
