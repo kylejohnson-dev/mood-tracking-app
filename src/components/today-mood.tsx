@@ -1,6 +1,15 @@
+"use client"
+
+import { useAuth } from "@/lib/auth-context";
 import Image from "next/image";
 
 export function TodayMood() {
+  const { user } = useAuth();
+  
+  if (!user) {
+    return null;
+  }
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <div className="relative md:flex md:flex-col md:justify-between lg:col-span-8 md:h-[340px] bg-white rounded-2xl md:overflow-hidden space-y-6 px-4 py-8 md:p-8">

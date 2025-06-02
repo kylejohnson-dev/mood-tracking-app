@@ -1,7 +1,16 @@
+"use client"
+
 import Image from "next/image";
 import { Chart } from "./chart";
+import { useAuth } from "@/lib/auth-context";
 
 export function SleepTrends() {
+  const { user } = useAuth();
+    
+  if (!user) {
+    return null;
+  }
+
   return (
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
       <div className="lg:col-span-4 bg-white rounded-2xl space-y-6 px-4 py-5">
