@@ -3,6 +3,23 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-blue-700: #2A4CD5;
+  --color-blue-600: #4865DB;
+  --color-blue-200: #C7D3F7;
+  --color-blue-100: #E0E6FA;
+  --color-nuetral-900: #21214D;
+  --color-nuetral-600: #57577B;
+  --color-nuetral-300: #9393B7;
+  --color-nuetral-200: #CBCDD0;
+  --color-red-700: #E60013;
+  --color-red-300: #FF9B99;
+  --color-indigo-200: #B8B1FF;
+  --color-blue-300: #89CAFF;
+  --color-green-300: #89E780;
+  --color-amber-300: #FFC97C;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

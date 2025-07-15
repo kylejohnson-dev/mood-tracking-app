@@ -7,6 +7,16 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } 
 import { Progress } from "./ui/progress";
 import { RadioGroup } from "./ui/radio-group";
 
+const CURRENT_DATE = new Date();
+const TODAY_MOOD =  {
+  id: "",
+  created_at: new Date(), // Change this to not current date to simulate different UI states
+  mood: -1,
+  feelings: ["Grateful", "Optimistic"],
+  journal_entry: "Woke up early and finally tackled a big project!",
+  sleep_hours: 9.5,
+};
+
 const steps = [
   {
     title: "Log your mood.",
@@ -45,6 +55,10 @@ export function LogMood() {
     }
 
     setStep(step + 1);
+  }
+
+  if (CURRENT_DATE.toLocaleDateString() === TODAY_MOOD.created_at.toLocaleDateString()) {
+    console.log("Today's mood already logged.");
   }
 
   return (

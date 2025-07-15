@@ -4,7 +4,14 @@ import { useAuth } from "@/lib/auth-context";
 import { LogMood } from "./log-mood";
 import { Button } from "./ui/button";
 
-// FIX: use javascript to get the current date
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleDateString('en-US', {
+  weekday: 'long',
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric'
+});
+
 export function Hero() {
   const { user, login } = useAuth();
   
@@ -13,7 +20,7 @@ export function Hero() {
       <div className="my-12 lg:my-16">
         {user && <p className="text-preset-3 text-blue-600">Hello, Lisa!</p>}
         <p className="text-preset-1 text-neutral-900">How are you feelin today?</p>
-        <p className="text-preset-6 text-neutral-600">Wednesday, April 16th, 2025</p>
+        <p className="text-preset-6 text-neutral-600">{formattedDate}</p>
       </div>
       {user ? (
         <LogMood />
